@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="shortcut icon" href="./images/favicon/koala.ico" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <title>Frontend Mentor FAQ Accordion Card</title>
@@ -20,7 +21,7 @@
         </div>
       </div>
       <!-- accordion -->
-      <article class="accordion">
+      <article class="accordion" data-aos="fade-up">
         <div class="accordion__svgs">
           <div class="illustration">
             <!-- desktop main -->
@@ -166,6 +167,11 @@
         <img src="./images/logo/habibdevgif.gif" alt="logo" />
       </footer>
     </div>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 200, duration: 1000, once: true });
+    </script>
     <script src="./js/main.js"></script>
   </body>
 </html>
