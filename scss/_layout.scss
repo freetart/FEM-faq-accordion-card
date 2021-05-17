@@ -7,4 +7,8 @@
   background: color(bg-blue);
   background: linear-gradient(color(bg-violet), color(bg-blue));
   overflow-x: hidden;
+
+  @include responsive(lg) {
+    padding-top: 10rem;
+  }
 }
