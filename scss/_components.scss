@@ -1,1 +1,71 @@
-// components
+// accordion
+.accordion {
+  @include maxWidthSm;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: color(white);
+  border-radius: 3rem;
+
+  &__svgs {
+    background: url("../images/bg-pattern-desktop.svg") right/cover no-repeat;
+
+    .illustration {
+      position: relative;
+
+      &__main {
+        position: absolute;
+        top: 5rem;
+        left: -3rem;
+      }
+
+      &__box {
+        position: absolute;
+        width: 40%;
+        top: 20rem;
+        left: -3rem;
+      }
+    }
+  }
+
+  &__faqs {
+    padding: 5rem;
+
+    &__title {
+      @include headingStyles;
+      color: color(text-darkBlue);
+      font-size: size(xxl);
+    }
+
+    .faq {
+      padding: 2rem 0;
+      border-bottom: 0.1rem solid color(div-grayishBlue);
+
+      &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__question {
+          @include textStyles;
+          font-size: size(xs);
+          color: color(text-darkBlue);
+        }
+
+        &__icon {
+          width: 1.5rem;
+          margin: 0.5rem;
+        }
+      }
+
+      &__answer {
+        // height: 0;
+        display: none;
+        overflow: hidden;
+        color: color(text-lightGrayishBlue);
+        font-size: size(xs);
+        @include textStyles;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
