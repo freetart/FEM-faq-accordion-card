@@ -49,22 +49,42 @@
           @include textStyles;
           font-size: size(xs);
           color: color(text-darkBlue);
+          overflow: hidden;
         }
 
         &__icon {
           width: 1.5rem;
           margin: 0.5rem;
+          transition: all 0.3s ease;
         }
       }
 
       &__answer {
-        // height: 0;
-        display: none;
+        @include textStyles;
+        opacity: 0;
+        height: 0;
+        transform: translateY(-10%);
         overflow: hidden;
         color: color(text-lightGrayishBlue);
         font-size: size(xs);
-        @include textStyles;
         padding: 0.5rem 0;
+        transition: height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      &.active {
+        .faq__answer {
+          height: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .faq__link__icon {
+          transform: rotate(180deg);
+        }
+
+        .faq__link__question {
+          font-weight: bold;
+        }
       }
     }
   }
